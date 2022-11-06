@@ -1,0 +1,7 @@
+{
+  "name": "sampleMenu",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

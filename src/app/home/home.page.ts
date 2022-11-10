@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  subList: boolean;
 
-  constructor() {}
+  constructor( private menuCtrl: MenuController) {
+    this.showMenu();
+    this.subList=false;
+  }
 
+  showMenu(){
+    this.menuCtrl.open();
+  }
+  closeMenu(){
+    this.menuCtrl.close();
+  }
 }

@@ -6,13 +6,23 @@ import { MenuController } from '@ionic/angular';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent implements OnInit{
+  subList: boolean;
+  isClose: boolean;
   constructor(private menuCtrl: MenuController) {}
   ngOnInit(): void {
     this.menuCtrl.toggle();
+    this.subList=false;
   }
 
-  closeMenu(){
-    const toggle=document.getElementById('closeMenu');
-    toggle.click();
+  async closeMenu(){
+    this.menuCtrl.toggle();
+    console.log('close');
+  }
+  displaySubList(){
+    this.subList=!this.subList;
+  }
+
+  menuToggled(menuIsOpen){
+    this.isClose=!menuIsOpen;
   }
 }

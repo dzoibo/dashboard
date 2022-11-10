@@ -1,6 +1,9 @@
 <ion-app>
-  <ion-menu (click)="closeMenu()" menuId="custom" contentId="menuId">
+  <ion-menu (ionDidOpen)="menuToggled(true)" (ionDidClose)="menuToggled(false)" (click)="closeMenu()" menuId="custom" contentId="menuId">
     <ion-content  class="ion-padding">
+      <ion-fab-button color="primary" class="swipe_menu">
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </ion-fab-button>
       <div id="tree_dots">
         <ion-label></ion-label>
         <ion-label></ion-label>
@@ -13,7 +16,7 @@
               <img alt="user's profile" src="../assets/profile.png" />
             </ion-avatar>
             <ion-label>
-              <ion-text>Hello</ion-text>
+              <ion-text>Hello <span class="emoji"></span></ion-text>
               <ion-text>Allenn Design</ion-text>
             </ion-label>
           </div>
@@ -60,11 +63,10 @@
             <ion-item class="selected_item">
               <img src="../assets/groups.png" alt=""/>
               <ion-text>Groups</ion-text>
-              <ion-icon name="add" color="light"></ion-icon>
+              <ion-icon name="chevron-down-outline" color="light"></ion-icon>
             </ion-item>
             <ion-list class="ion-no-padding">
-              <div>cecwj</div>
-              
+              <div></div>
               <ion-item>
                 <ion-text>
                   UX Research
@@ -74,7 +76,7 @@
                 <ion-text>
                   Ui Design
                 </ion-text>
-                <ion-icon name="add" color="light"></ion-icon>
+                <ion-icon name="chevron-down-outline" color="light"></ion-icon>
             </ion-item>
               <ion-item>
                 <ion-text>
@@ -101,7 +103,7 @@
             
           </ion-list>
 
-          <div id="uploader">
+          <div class="uploader">
             <ion-fab-button color="primary">
               +
             </ion-fab-button>
@@ -114,9 +116,98 @@
         </div>
         
       </ion-header>
-      <ion-menu-toggle id="closeMenu">
+      <ion-menu-toggle>
       </ion-menu-toggle>
     </ion-content>
   </ion-menu>
+  <div id="small_menu" *ngIf="isClose">
+    
+      <ion-fab-button color="primary" class="swipe_menu" >
+        <ion-icon name="chevron-back-outline" (click)="closeMenu()"></ion-icon>
+      </ion-fab-button>
+      <div id="tree_dots">
+        <ion-label></ion-label>
+        <ion-label></ion-label>
+        <ion-label></ion-label>
+      </div>
+      <ion-header >
+        <ion-toolbar>
+          <div id="user_information">
+            <ion-avatar >
+              <img alt="user's profile" src="../assets/profile.png" />
+            </ion-avatar>
+          </div>
+        </ion-toolbar>
+        <div>
+          <ion-list lines="none">
+            <ion-item > 
+              <img src="../assets/dashboard.png" alt=""/>
+            </ion-item>
+            <ion-item id="friends">
+              <img src="../assets/friends.png" alt=""/>
+              <ion-badge color="warning">
+                4
+              </ion-badge>
+            </ion-item>
+            <ion-item>
+              <img src="../assets/chat.png" alt=""/>
+            </ion-item>
+            <ion-item>
+              <img src="../assets/challenges.png" alt=""/>
+            </ion-item>
+            <ion-item class="selected_item">
+              <img src="../assets/groups.png" alt=""/>
+            </ion-item>
+            <ion-list class="ion-no-padding">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <ion-item>
+                <ion-text>
+                  UX Research
+                </ion-text>
+              </ion-item>
+              <ion-item class="selected_item">
+                <ion-text>
+                  Ui Design
+                </ion-text>
+            </ion-item>
+              <ion-item>
+                <ion-text>
+                  Ui/Ux Design
+                </ion-text>
+              </ion-item>
+              <ion-item>
+                <ion-text>
+                  Flutter Developers
+                </ion-text>
+              </ion-item>
+            </ion-list>
+            <ion-item>
+              <img src="../assets/saves.png" alt=""/>
+            </ion-item>
+            <ion-item>
+              <img src="../assets/notification.png" alt=""/>
+              <ion-badge color="warning">
+                6
+              </ion-badge>
+            </ion-item>
+            
+          </ion-list>
+
+          <div class="uploader">
+            <ion-fab-button color="primary">
+              +
+            </ion-fab-button>
+            <div>
+              <ion-text>Upload</ion-text>
+            </div>
+            
+          </div>
+        </div>
+        
+      </ion-header>
+  </div>
   <ion-router-outlet id="menuId"></ion-router-outlet>
 </ion-app>

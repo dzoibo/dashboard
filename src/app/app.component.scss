@@ -1,6 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
+
+*{
+    font-family: 'Inter', sans-serif !important;
+}
 ion-content,ion-header,ion-toolbar{
     --background: transparent;
+   
 }
+::-webkit-scrollbar {
+    width: 10px;
+  }
 ion-menu{
     --background:rgba(0, 0, 0, 0.6);
 }
@@ -98,10 +107,28 @@ ion-list:first-child{
         div{
             position: absolute;
             top:0px;
-            left: 0px;
-            border: 1px solid red;
-            height: 164px;
-            top:12px;
+            left: 13px;
+            border-left: 1px solid rgba(255, 255, 255, 0.5);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 0px 0px 0px 10px;
+            width: 11px;
+            &:nth-child(1){
+                height: 195px;
+                top:0px;
+            }
+            &:nth-child(2){
+                height: 70px;
+                top:10px;
+            }
+            &:nth-child(3){
+                height: 90px;
+                top: 50px;
+            }
+            &:nth-child(4){
+                height: 20px;
+                top: 6px;
+            }
+
 
         }
         ion-item{
@@ -177,8 +204,8 @@ ion-badge{
     }
 
     
-
-    #uploader{
+   
+    .uploader{
         margin-top: 10px;
         border: 1px dashed rgba(255, 255, 255, 0.4);
         width: 100%;
@@ -188,15 +215,7 @@ ion-badge{
         justify-content: space-around;
         align-items: center;
         flex-direction: column;
-        ion-fab-button{
-            width: 57px;
-            height: 50px;
-            font-size: 22px;
-            text-align: center;
-            box-shadow: 1px -1px 10px 0px rgba(28,117,253,0.47);
-            -webkit-box-shadow: 1px -1px 10px 0px rgba(28,117,253,0.47);
-            -moz-box-shadow: 1px -1px 10px 0px rgba(28,117,253,0.47);
-        }
+        
         ion-text{
             color: white;
             text-align: center;
@@ -211,5 +230,46 @@ ion-badge{
                 font-size: 14px;
                 opacity: 40%;
             }
+        }
+        ion-fab-button{
+            border-radius: 50%;
+            width: 57px;
+            height: 50px;
+            font-size: 22px;
+            text-align: center;
+            box-shadow: 0px 0px 10px 4px rgba(28,117,253,0.75);
+-webkit-box-shadow: 0px 0px 10px 4px rgba(28,117,253,0.75);
+-moz-box-shadow: 0px 0px 10px 4px rgba(28,117,253,0.75);
+        }
+    }
+
+    #small_menu{
+        position: absolute;
+        width: 100px;
+        background:rgba(0, 0, 0, 0.6);
+        ion-badge{
+            top: 0px;
+            left: 15px;
+        }
+
+        .uploader{
+            height: auto;
+            padding-top: 10px;
+            padding-bottom: 104px;
+        }
+
+    }
+    .swipe_menu{
+        position: absolute;
+        height: 30px;
+        width: 30px;
+        font-size: xx-small;
+        right: -10px;
+        top:100px
+    }
+
+    @media (min-width:700px)  { 
+        ion-menu{
+            --width:400px;
         }
     }

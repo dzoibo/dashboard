@@ -1,0 +1,93 @@
+
+   
+  <div id="small_menu" *ngIf="isOpen">
+    
+    <div id="container" >
+        
+        <ion-fab-button  (click)="showMenu()" color="primary" class="swipe_menu">
+            <ion-icon name="chevron-forward-outline" ></ion-icon>
+          </ion-fab-button>
+        <div id="tree_dots">
+          <ion-label></ion-label>
+          <ion-label></ion-label>
+          <ion-label></ion-label>
+        </div>
+            <div id="user_information">
+              <ion-avatar >
+                <img alt="user's profile" src="../assets/profile.png" />
+              </ion-avatar>
+            </div>
+          <div>
+            <ion-list lines="none" style="width: 300px;">
+              <ion-item > 
+                <img src="../assets/dashboard.png" alt=""/>
+              </ion-item>
+              <ion-item id="friends">
+                <img src="../assets/friends.png" alt=""/>
+                <ion-badge color="warning">
+                  4
+                </ion-badge>
+              </ion-item>
+              <ion-item>
+                <img src="../assets/chat.png" alt=""/>
+              </ion-item>
+              <ion-item>
+                <img src="../assets/challenges.png" alt=""/>
+              </ion-item>
+              <ion-item class="selected_item">
+                <img src="../assets/groups.png" alt=""/>
+              </ion-item>
+              <div id="details-list">
+                <ion-list class="ion-no-padding" lines="none" >
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <ion-item>
+                      <ion-text>
+                        UX Research
+                      </ion-text>
+                    </ion-item>
+                    <ion-item class="selected_item">
+                      <ion-text>
+                        Ui Design
+                      </ion-text>
+                      <ion-icon name="chevron-forward-outline" color="light"></ion-icon>
+
+                  </ion-item>
+                    <ion-item >
+                      <ion-text>
+                        Ui/Ux Design
+                      </ion-text>
+                    </ion-item>
+                    <ion-item>
+                      <ion-text>
+                        Flutter Developers
+                      </ion-text>
+                    </ion-item>
+                  </ion-list>
+              </div>
+              <ion-item>
+                <img src="../assets/saves.png" alt=""/>
+              </ion-item>
+              <ion-item lines="full">
+                <img src="../assets/notification.png" alt=""/>
+                <ion-badge color="warning">
+                  6
+                </ion-badge>
+              </ion-item>
+              
+            </ion-list>
+  
+            <div class="uploader">
+              <ion-fab-button color="primary">
+                +
+              </ion-fab-button>
+              <div>
+                <ion-text>Upload</ion-text>
+              </div>
+              
+            </div>
+          </div>
+    </div>
+  </div>

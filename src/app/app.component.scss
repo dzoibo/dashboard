@@ -84,7 +84,19 @@ ion-toolbar{
 ion-list:first-child{
     background-color:transparent ;
     border-bottom:1px solid white;
+    
     ion-item{
+        ion-icon{
+            position: absolute;
+            right: 24px;
+        }
+        &:hover{
+            border-radius: 7px;
+            ion-text{
+                color:rgba(255, 255, 255, 1) !important;
+             }
+            background-color: rgba(255, 255, 255, 0.1);
+        }
         position:relative;
         --ion-item-background:transparent; 
         --highlight-height: 0px;
@@ -204,10 +216,7 @@ ion-badge{
             color:rgba(255, 255, 255, 1) !important;
          }
         background-color: rgba(255, 255, 255, 0.1);
-        ion-icon{
-            position: absolute;
-            right: 24px;
-        }
+        
     }
 
     

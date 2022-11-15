@@ -9,6 +9,7 @@ import { MenuServiceService } from './menu-service.service';
 export class AppComponent implements OnInit{
   subList: boolean;
   isClose: boolean;
+  isShowDetails: boolean;
   constructor(private menuCtrl: MenuController, private menuService: MenuServiceService) {}
   ngOnInit(): void {
     this.menuCtrl.toggle();
@@ -36,5 +37,8 @@ export class AppComponent implements OnInit{
   menuOpen(){
     console.log('border is open');
     this.menuCtrl.open();
+  }
+  showDetails(){
+    this.isShowDetails=!this.isShowDetails;
   }
 }

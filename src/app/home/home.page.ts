@@ -10,6 +10,7 @@ import { MenuServiceService } from '../menu-service.service';
 export class HomePage {
   subList: boolean;
   isOpen=false;
+  isShowDetails: boolean;
 
   constructor( private menuCtrl: MenuController, private menuService: MenuServiceService ) {
     this.showMenu();
@@ -20,5 +21,8 @@ export class HomePage {
   showMenu(){
     this.menuCtrl.open();
     this.isOpen=false;
+  }
+  showDetails(){
+    this.isShowDetails=!this.isShowDetails;
   }
 }

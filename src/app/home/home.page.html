@@ -1,5 +1,4 @@
-
-   
+<ion-content style="background: url(../../assets/background.jpg);" class="ion-no-padding">
   <div id="small_menu" *ngIf="isOpen">
     
     <div id="container" >
@@ -34,11 +33,11 @@
               <ion-item>
                 <img src="../assets/challenges.png" alt=""/>
               </ion-item>
-              <ion-item class="selected_item">
+              <ion-item [ngClass]="isShowDetails?'selected_item':' '" (click)="showDetails()">
                 <img src="../assets/groups.png" alt=""/>
               </ion-item>
               <div id="details-list">
-                <ion-list class="ion-no-padding" lines="none" >
+                <ion-list class="ion-no-padding" lines="none" *ngIf="isShowDetails">
                     <div></div>
                     <div></div>
                     <div></div>
@@ -91,3 +90,6 @@
           </div>
     </div>
   </div>
+</ion-content>
+   
+  
